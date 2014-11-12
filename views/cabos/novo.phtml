@@ -1,0 +1,196 @@
+
+<form action="<?php print URL; ?>/cabos" id="cabo" class="form-horizontal" method="POST">
+    <fieldset>
+
+        <div class="span10 " id="content" style="margin-left: 300px;">
+            <!-- validation -->
+            <div class="row-fluid">
+                <!-- block -->
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-right text-error">Dados da Origem</div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <div class="span12">
+                            <!-- BEGIN FORM-->
+
+                            <div class="control-group">
+                                <label class="control-label">Codigo<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="codigo" data-required="1" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Cor<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select name="cor">
+                                        <option value="#FFFF00">Amarelo</option>
+                                        <option value="#0000FF">Azul</option>
+                                        <option value="#FFFFFF">Branco</option>
+                                        <option value="#8B0000">Castanho</option>
+                                        <option value="#808080">Cinza</option>
+                                        <option value="#FFA500">Laranja</option>
+                                        <option value="#000000">Preto</option>
+                                        <option value="#008000">Verde</option>
+                                        <option value="#FF0000">Vermelho</option>
+
+                                    </select>    
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Tipo<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select name="tipo">
+                                        <option value="UTP">UTP</option>
+                                        <option value="FIBRA">FIBRA</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Descrição<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="descricao" type="text" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Equipamento<span class="required">*</span></label>
+                                <div class="controls">
+                                    <div>
+                                        <select id="equipamento" name="equipamento" > 
+                                            <option value="000">-Seleciona um equipamento-</option>
+                                        </select>
+
+                                        <select id="equipamento_porta" name="equipamento_porta" > </select>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group">
+                                <label class="control-label">PatchPanel<span class="required">*</span></label>
+                                <div class="controls">
+                                    <div><select id="patch" name="patchpanel">
+                                            <option value="000">-Seleciona um equipamento-</option>
+                                        </select>
+                                        <select id="patch_porta" name="patchpanel_porta"> 
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <input name="enviar" type="hidden" value="1"/>
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                </div>
+                <!-- /block -->
+                <!-- /validation -->
+
+
+
+                <!-- block -->
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-right text-error">Dados de Destino</iv>
+                        </div>
+                        <div class="block-content collapse in">
+                            <div class="span12">
+                                <!-- BEGIN FORM-->
+                                <div class="control-group">
+                                    <label class="control-label">Codigo<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input type="text" name="codigo1" data-required="1" class="span6 m-wrap"/>
+                                    </div>
+                                </div> 
+                                <div class="control-group">
+                                    <label class="control-label">Cor<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select name="cor1">
+                                            <option value="#FFFF00">Amarelo</option>
+                                            <option value="#0000FF">Azul</option>
+                                            <option value="#FFFFFF">Branco</option>
+                                            <option value="#8B0000">Castanho</option>
+                                            <option value="#808080">Cinza</option>
+                                            <option value="#FFA500">Laranja</option>
+                                            <option value="#000000">Preto</option>
+                                            <option value="#008000">Verde</option>
+                                            <option value="#FF0000">Vermelho</option>
+
+                                        </select>    
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Tipo<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select name="tipo1">
+                                            <option value="UTP">UTP</option>
+                                            <option value="FIBRA">FIBRA</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Descrição<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <input name="descricao1" type="text" class="span6 m-wrap"/>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Equipamento<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <div>
+                                            <select id="equipamento1" name="equipamento1" > 
+                                                <option value="000">-Seleciona um equipamento-</option>
+                                            </select>
+
+                                            <select id="equipamento_porta1" name="equipamento_porta1" > </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <label class="control-label">PatchPanel<span class="required">*</span></label>
+                                    <div class="controls">
+                                        <div><select id="patch1" name="patchpanel1">
+                                                <option value="000">-Seleciona um equipamento-</option>
+                                            </select>
+                                            <select id="patch_porta1" name="patchpanel_porta1"> 
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input name="enviar" type="hidden" value="1"/>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                    <button type="reset" class="btn">Cancelar</button>
+                                </div>
+
+
+
+                                <!-- END FORM-->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- /block -->
+
+                    <!-- /validation -->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

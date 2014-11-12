@@ -1,0 +1,66 @@
+
+<div class="span10 " id="content" style="margin-left: 300px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Dados do Alarme</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>/coyonet_hpas" id="cliente" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">status<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="status" data-required="1" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getStatus(); ?>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">amp<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="amp" type="text" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getAmp(); ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">power<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="power" type="text" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getPower(); ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">tube_temp<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="tube_temp" type="text" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getTubeTemp(); ?>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">obs<span class="required">*</span></label>
+                                <div class="controls">
+                                    <textarea name="obs" id="descricao" class="span6 m-wrap" rows="5" cols="30">
+                                        <?php if (isset($this->dados)) print $this->dados->getObs(); ?>
+                                    </textarea>
+                                </div>
+                            </div>
+
+
+                            <input name="enviar" type="hidden" value="1"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                <button type="reset" class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>

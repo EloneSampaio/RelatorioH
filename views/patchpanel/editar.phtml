@@ -1,0 +1,72 @@
+
+<div class="span10 " id="content" style="margin-left: 300px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Dados do Alarme</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form   class="form-horizontal" method="POST">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">servicos<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="servicos" data-required="1" class="span6 m-wrap"value="<?php if (isset($this->dados)) print $this->dados->getServicos(); ?>">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">inicio<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="inicio" type="text" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getInicio(); ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">fim<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="fim" type="text" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getFim(); ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">status<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="status" type="text" class="span6 m-wrap" value="<?php if (isset($this->dados)) print $this->dados->getIntervencaoCausa(); ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">intervencao_causa<span class="required">*</span></label>
+                                <div class="controls">
+                                    <textarea name="intervencao_causa" id="descricao" class="span6 m-wrap" rows="5" cols="30"><?php if (isset($this->dados)) print $this->dados->getStatus(); ?></textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">obs<span class="required">*</span></label>
+                                <div class="controls">
+                                    <textarea name="obs" id="descricao" class="span6 m-wrap" rows="5" cols="30"><?php if (isset($this->dados)) print $this->dados->getObs(); ?></textarea>
+                                </div>
+                            </div>
+
+
+                            <input name="enviar" type="hidden" value="1"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                <button type="reset" class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
+</div>

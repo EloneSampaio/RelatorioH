@@ -1,0 +1,90 @@
+
+<div class="row-fluid" id="cliente">
+    <!-- block -->
+    <div class="block">
+        <div class="navbar navbar-inner block-header">
+            <div class="muted pull-left"><?php print $this->titulo; ?></div>
+        </div>
+        <div class="block-content collapse in">
+            <div class="span12">
+                <div class="table-toolbar">
+                    <div class="btn-group">
+                        <a href="<?php print URL; ?>interfaces/novo"><button class="btn btn-success" id="">Adiconar Novo <i class="icon-plus icon-white"></i></button></a>
+                    </div>
+                </div>
+                <div class="table-responsive"> 
+                    <table  class="table table-striped table-bordered  table-hover">   
+                        <thead>
+                            <tr>
+                                <th>Porta</th> 
+                                <th>Equipamento</th>
+                                <th>Patchpanel</th>
+                                <th>Descrição</th>
+                                <th>Equipamento/Localização</th>
+                                <th>Patchpanel/Localização</th>
+                                <?php if (\application\Session::nivelViewRestrito(array('admin'))): ?>  <th>Usuario</th> <?php endif; ?> 
+                                <?php if (\application\Session::nivelViewRestrito(array('admin'))): ?>  <th></th> <?php endif; ?> 
+                                <?php if (\application\Session::nivelViewRestrito(array('admin'))): ?>  <th></th> <?php endif; ?> 
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php if (isset($this->interface) && !empty($this->interface)): ?>
+
+                                <?php
+                                foreach ($this->interface as $d):
+                                    ?>
+
+                                    <tr class="active">
+                                        <td><?php print $d->getNome(); ?></td>
+                                        <td>
+                                            <?php
+                                            if (!empty($d->getEquipamentos())): print $d->getEquipamentos()->getNome();
+                                            else: print "nenhum";
+                                            endif;
+                                            ?>
+                                        </td>
+
+                                        <td><?php
+                                            if (!empty($d->getPatchpanel())): print $d->getPatchpanel()->getNome();
+                                            else: print "nenhum";
+                                            endif;
+                                            ?>
+                                        </td>
+                                        <td><?php print $d->getDescricao(); ?></td>
+                                        <td><?php
+                                            if (!empty($d->getEquipamentos())): print $d->getEquipamentos()->getRacks()->getNome();
+                                            else: print "nenhum";
+                                            endif;
+                                            ?>
+                                        </td>
+                                        <td><?php
+                                            if (!empty($d->getPatchpanel())): print $d->getPatchpanel()->getRacks()->getNome();
+                                            else: print "nenhum";
+                                            endif;
+                                            ?>
+                                        </td>
+
+                                        <?php if (\application\Session::nivelViewRestrito(array('admin'))): ?>   <td><?php print $d->getUsuarios()->getNome(); ?></td>
+                                        <?php endif; ?>
+                                        <?php if (\application\Session::nivelViewRestrito(array('admin'))): ?>   <td><a rel="<?php print $d->getId(); ?>" href="<?php print URL . "equipamentos/editar/" . $d->getId(); ?>" id="altera"><i class="icon-edit"><i></i></a></td>
+                                        <?php endif; ?>
+                                        <?php if (\application\Session::nivelViewRestrito(array('admin'))): ?>   <td><a rel="<?php print $d->getId(); ?>" href="<?php print URL . "coyonet_hpas/apagar/" . $d->getId(); ?>" id="delete"><i class="icon-trash"><i></i></a></td>
+                                        <?php endif; ?>
+                                    </tr>
+                                <?php endforeach; ?>
+
+                            </tbody>
+                        </table>
+                    <?php else: ?>
+                        <h2 class="text-center alert-error">Não foi encontrado Dados</h2>
+                    <?php endif; ?>
+
+                    <?php if (isset($this->paginacao) && !empty($this->paginacao) && (count($this->paginacao))) echo $this->paginacao; ?>
+
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+</div>

@@ -1,0 +1,58 @@
+
+<div class="span10 " id="content" style="margin-left: 300px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Dados do Alarme</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>/identificacao_turnos" id="cliente" class="form-horizontal" method="POST">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">turno<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select name="turno" class="span6 m-wrap">
+                                        <option value="Manhã">Manhã</option>
+                                        <option value="Tarde">Tarde</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">inicio<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="inicio" type="datetime-local" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">fim<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="fim" type="datetime-local" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">obs<span class="required">*</span></label>
+                                <div class="controls">
+                                    <textarea name="obs" id="descricao" class="span6 m-wrap" rows="5" cols="30"></textarea>
+                                </div>
+                            </div>
+                            <input name="enviar" type="hidden" value="1"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                <button type="reset" class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+</div>

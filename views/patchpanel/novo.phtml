@@ -1,0 +1,52 @@
+
+<div class="span10 " id="content" style="margin-left: 300px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Dados do PatchPanel</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>/patchpanel" id="path" class="form-horizontal" method="POST">
+                        <fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label">Descrição<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="descricao" type="text" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Tipo<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="number" name="tipo"  class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Rack<span class="required">*</span></label>
+                                <div class="controls">
+                                    <div id="rack"><select id="patch" name="rack">  </select> </div>
+                                </div>
+                            </div>
+
+                            <input name="enviar" type="hidden" value="1"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                <button type="reset" class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>

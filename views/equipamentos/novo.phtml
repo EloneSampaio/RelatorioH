@@ -1,0 +1,98 @@
+
+
+<div class="span10 " id="content" style="margin-left: 300px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Dados do PatchPanel</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>/equipamentos" id="equipament" class="form-horizontal" method="POST">
+                        <fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label">Nome<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="nome" type="text" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Descrição<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="descricao" type="text" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Tipo<span class="required">*</span></label>
+                                <div class="controls">
+                                    <select name="tipo">
+                                        <option value="Switch">Switch</option>
+                                        <option value="Roteador">Roteador</option>
+                                    </select> 
+                                </div>
+                            </div>
+
+                            <!------------------------>
+
+
+                            <div class=" control-group">
+                                <div class="form-group multiple-form-group input-group">
+                                    <div class="input-group-btn input-group-select">
+                                        <li class="dropdown controls">
+
+                                            <button  type="button" role="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                                <span class="concept">Phone</span> <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li class="dropdown">
+                                                <li><a tabindex="-1"  href="#phone">Phone</a></li>
+                                                <li><a tabindex="-1"  href="#fax">Fax</a></li>
+                                                <li><a tabindex="-1"  href="#skype">Skype</a></li>
+                                                <li><a tabindex="-1"  href="#email">E-mail</a></li>
+                                                <li><a tabindex="-1"  href="#www">Web</a></li>
+                                                <input type="hidden" class="input-group-select-val span6 m-wrap" name="contacts['type'][]" value="phone">
+                                            </ul>
+                                        </li>
+                                    </div>
+                                    <div class="controls">
+                                        <input type="text" name="contacts['value'][]" class="span6 m-wrap">
+                                    </div>
+                                    <span class="input-group-btn controls" >
+                                        <button type="button" class="btn btn-success btn-add">+</button>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <!----------------------------->
+
+
+
+                            <div class="control-group">
+                                <label class="control-label">Rack<span class="required">*</span></label>
+                                <div class="controls">
+                                    <div id="rack"><select id="patch" name="rack">  </select> </div>
+                                </div>
+                            </div>
+
+                            <input name="enviar" type="hidden" value="1"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                <button type="reset" class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>

@@ -1,0 +1,73 @@
+
+<div class="span10 " id="content" style="margin-left: 300px;">
+    <!-- validation -->
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-right">Dados da Interface</div>
+            </div>
+            <div class="block-content collapse in">
+                <div class="span12">
+                    <!-- BEGIN FORM-->
+                    <form action="<?php print URL; ?>/interfaces" id="interface" class="form-horizontal" method="POST">
+                        <fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label">Numero/Porta<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="nome" type="text" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Descrição<span class="required">*</span></label>
+                                <div class="controls">
+                                    <input name="descricao" type="text" class="span6 m-wrap"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input type="checkbox" data-off-title="No" data-on-title="Yes" name="opcao" id="opcao">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Equipamento<span class="required">*</span></label>
+                                <div class="controls  ">
+                                    <div>
+                                        <select id="equipamento" name="equipamento" > 
+                                            <option value="000">-Seleciona um equipamento-</option>
+                                        </select> 
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group">
+                                <label class="control-label">PatchPanel<span class="required">*</span></label>
+                                <div class="controls">
+                                    <div>
+                                        <select id="patch" name="patchpanel">
+                                            <option value="000">-Seleciona um patchpanel-</option>
+                                        </select> </div>
+                                </div>
+                            </div>
+
+                            <input name="enviar" type="hidden" value="1"/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="novo">Salvar Dados</button>
+                                <button type="reset" class="btn">Cancelar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /validation -->
+
+</div>
