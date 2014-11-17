@@ -64,10 +64,10 @@ class Cabos extends \models\Cabos implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'models\\Cabos' . "\0" . 'id', '' . "\0" . 'models\\Cabos' . "\0" . 'cor', '' . "\0" . 'models\\Cabos' . "\0" . 'tipo', '' . "\0" . 'models\\Cabos' . "\0" . 'descricao', '' . "\0" . 'models\\Cabos' . "\0" . 'interfaces', '' . "\0" . 'models\\Cabos' . "\0" . 'patchpanel', '' . "\0" . 'models\\Cabos' . "\0" . 'usuarios');
+            return array('__isInitialized__', '' . "\0" . 'models\\Cabos' . "\0" . 'id', '' . "\0" . 'models\\Cabos' . "\0" . 'cor', '' . "\0" . 'models\\Cabos' . "\0" . 'tipo', '' . "\0" . 'models\\Cabos' . "\0" . 'descricao', '' . "\0" . 'models\\Cabos' . "\0" . 'codigo', '' . "\0" . 'models\\Cabos' . "\0" . 'equipamentosPorta', '' . "\0" . 'models\\Cabos' . "\0" . 'patchpanelPorta', '' . "\0" . 'models\\Cabos' . "\0" . 'usuarios', '' . "\0" . 'models\\Cabos' . "\0" . 'equipamentos', '' . "\0" . 'models\\Cabos' . "\0" . 'patchpanel');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'models\\Cabos' . "\0" . 'id', '' . "\0" . 'models\\Cabos' . "\0" . 'cor', '' . "\0" . 'models\\Cabos' . "\0" . 'tipo', '' . "\0" . 'models\\Cabos' . "\0" . 'descricao', '' . "\0" . 'models\\Cabos' . "\0" . 'interfaces', '' . "\0" . 'models\\Cabos' . "\0" . 'patchpanel', '' . "\0" . 'models\\Cabos' . "\0" . 'usuarios');
+        return array('__isInitialized__', '' . "\0" . 'models\\Cabos' . "\0" . 'id', '' . "\0" . 'models\\Cabos' . "\0" . 'cor', '' . "\0" . 'models\\Cabos' . "\0" . 'tipo', '' . "\0" . 'models\\Cabos' . "\0" . 'descricao', '' . "\0" . 'models\\Cabos' . "\0" . 'codigo', '' . "\0" . 'models\\Cabos' . "\0" . 'equipamentosPorta', '' . "\0" . 'models\\Cabos' . "\0" . 'patchpanelPorta', '' . "\0" . 'models\\Cabos' . "\0" . 'usuarios', '' . "\0" . 'models\\Cabos' . "\0" . 'equipamentos', '' . "\0" . 'models\\Cabos' . "\0" . 'patchpanel');
     }
 
     /**
@@ -224,12 +224,45 @@ class Cabos extends \models\Cabos implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getInterfaces()
+    public function getEquipamentosPorta()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getInterfaces', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEquipamentosPorta', array());
 
-        return parent::getInterfaces();
+        return parent::getEquipamentosPorta();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPatchpanelPorta()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPatchpanelPorta', array());
+
+        return parent::getPatchpanelPorta();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsuarios()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsuarios', array());
+
+        return parent::getUsuarios();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEquipamentos()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEquipamentos', array());
+
+        return parent::getEquipamentos();
     }
 
     /**
@@ -290,34 +323,23 @@ class Cabos extends \models\Cabos implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setInterfaces(\models\Interfaces $interfaces)
+    public function setEquipamentosPorta($equipamentosPorta)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setInterfaces', array($interfaces));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEquipamentosPorta', array($equipamentosPorta));
 
-        return parent::setInterfaces($interfaces);
+        return parent::setEquipamentosPorta($equipamentosPorta);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setPatchpanel(\models\Patchpanel $patchpanel)
+    public function setPatchpanelPorta($patchpanelPorta)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPatchpanel', array($patchpanel));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPatchpanelPorta', array($patchpanelPorta));
 
-        return parent::setPatchpanel($patchpanel);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getUsuarios()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsuarios', array());
-
-        return parent::getUsuarios();
+        return parent::setPatchpanelPorta($patchpanelPorta);
     }
 
     /**
@@ -334,23 +356,56 @@ class Cabos extends \models\Cabos implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function Insert($objecto)
+    public function setEquipamentos(\models\Equipamentos $equipamentos)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Insert', array($objecto));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEquipamentos', array($equipamentos));
 
-        return parent::Insert($objecto);
+        return parent::setEquipamentos($equipamentos);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function listarEquip($id)
+    public function setPatchpanel(\models\Patchpanel $patchpanel)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarEquip', array($id));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPatchpanel', array($patchpanel));
 
-        return parent::listarEquip($id);
+        return parent::setPatchpanel($patchpanel);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCodigo()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCodigo', array());
+
+        return parent::getCodigo();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCodigo($codigo)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCodigo', array($codigo));
+
+        return parent::setCodigo($codigo);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function Insert($objecto, $equipamento, $patchpanel)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Insert', array($objecto, $equipamento, $patchpanel));
+
+        return parent::Insert($objecto, $equipamento, $patchpanel);
     }
 
     /**
@@ -362,39 +417,6 @@ class Cabos extends \models\Cabos implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'listaAll', array());
 
         return parent::listaAll();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function listarNome($nome)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarNome', array($nome));
-
-        return parent::listarNome($nome);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function listarLogin($login)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarLogin', array($login));
-
-        return parent::listarLogin($login);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function listarId($id)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarId', array($id));
-
-        return parent::listarId($id);
     }
 
     /**
@@ -417,6 +439,17 @@ class Cabos extends \models\Cabos implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'Delete', array($id));
 
         return parent::Delete($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function pesquisaId($id = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'pesquisaId', array($id));
+
+        return parent::pesquisaId($id);
     }
 
 }

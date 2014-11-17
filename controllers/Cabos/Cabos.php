@@ -47,11 +47,13 @@ class Cabos extends Controller {
         if (!Session::get('autenticado')) {
             $this->redirecionar();
         }
-
+        $this->view->setCss(array('dataTables.bootstrap'));
+        $this->view->setJs(array("novo"));
         $paginador = new \vendor\paginador\Paginador();
 
         $this->view->titulo = "Cabos";
-        $this->view->destino = $paginador->paginar($this->destino->listaAll(), $pagina, 5);
+        $this->view->destino = $paginador->paginar($this->destino->listaAll(), $pagina, 50);
+        $this->view->cabo = $paginador->paginar($this->cabo->listaAll(), $pagina, 50);
         $this->view->paginacao = $paginador->getView('paginacao', 'cabos/index');
 
 

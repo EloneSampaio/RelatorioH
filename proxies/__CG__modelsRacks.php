@@ -301,6 +301,17 @@ class Racks extends \models\Racks implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function listarNome($nome)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarNome', array($nome));
+
+        return parent::listarNome($nome);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function Update($dados)
     {
 
@@ -318,6 +329,17 @@ class Racks extends \models\Racks implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'Delete', array($id));
 
         return parent::Delete($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function listagem()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listagem', array());
+
+        return parent::listagem();
     }
 
 }

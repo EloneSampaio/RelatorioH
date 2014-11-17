@@ -34,8 +34,7 @@ class Racks extends Controller {
         if (!Session::get('autenticado')) {
             $this->redirecionar();
         }
-        $this->view->setJs(array('jquery.dataTables'));
-        $this->view->setJs(array("dataTables.bootstrap"));
+        
         $this->view->setCss(array('dataTables.bootstrap'));
         $this->view->setJs(array("novo"));
 

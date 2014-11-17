@@ -64,10 +64,10 @@ class Equipamentos extends \models\Equipamentos implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'models\\Equipamentos' . "\0" . 'id', '' . "\0" . 'models\\Equipamentos' . "\0" . 'nome', '' . "\0" . 'models\\Equipamentos' . "\0" . 'descricao', '' . "\0" . 'models\\Equipamentos' . "\0" . 'modelo', '' . "\0" . 'models\\Equipamentos' . "\0" . 'racks', '' . "\0" . 'models\\Equipamentos' . "\0" . 'usuarios');
+            return array('__isInitialized__', '' . "\0" . 'models\\Equipamentos' . "\0" . 'id', '' . "\0" . 'models\\Equipamentos' . "\0" . 'nome', '' . "\0" . 'models\\Equipamentos' . "\0" . 'descricao', '' . "\0" . 'models\\Equipamentos' . "\0" . 'tipo', '' . "\0" . 'models\\Equipamentos' . "\0" . 'modelo', '' . "\0" . 'models\\Equipamentos' . "\0" . 'racks', '' . "\0" . 'models\\Equipamentos' . "\0" . 'usuarios');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'models\\Equipamentos' . "\0" . 'id', '' . "\0" . 'models\\Equipamentos' . "\0" . 'nome', '' . "\0" . 'models\\Equipamentos' . "\0" . 'descricao', '' . "\0" . 'models\\Equipamentos' . "\0" . 'modelo', '' . "\0" . 'models\\Equipamentos' . "\0" . 'racks', '' . "\0" . 'models\\Equipamentos' . "\0" . 'usuarios');
+        return array('__isInitialized__', '' . "\0" . 'models\\Equipamentos' . "\0" . 'id', '' . "\0" . 'models\\Equipamentos' . "\0" . 'nome', '' . "\0" . 'models\\Equipamentos' . "\0" . 'descricao', '' . "\0" . 'models\\Equipamentos' . "\0" . 'tipo', '' . "\0" . 'models\\Equipamentos' . "\0" . 'modelo', '' . "\0" . 'models\\Equipamentos' . "\0" . 'racks', '' . "\0" . 'models\\Equipamentos' . "\0" . 'usuarios');
     }
 
     /**
@@ -312,12 +312,34 @@ class Equipamentos extends \models\Equipamentos implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
-    public function Insert($objecto)
+    public function getTipo()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Insert', array($objecto));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTipo', array());
 
-        return parent::Insert($objecto);
+        return parent::getTipo();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTipo($tipo)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTipo', array($tipo));
+
+        return parent::setTipo($tipo);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function Insert($objecto, $rack)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Insert', array($objecto, $rack));
+
+        return parent::Insert($objecto, $rack);
     }
 
     /**
@@ -345,39 +367,6 @@ class Equipamentos extends \models\Equipamentos implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
-    public function listarNome($nome)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarNome', array($nome));
-
-        return parent::listarNome($nome);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function listarLogin($login)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarLogin', array($login));
-
-        return parent::listarLogin($login);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function listarId($id)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listarId', array($id));
-
-        return parent::listarId($id);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function Update($dados)
     {
 
@@ -389,12 +378,45 @@ class Equipamentos extends \models\Equipamentos implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
+    public function pesquisa($pesquisa)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'pesquisa', array($pesquisa));
+
+        return parent::pesquisa($pesquisa);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function Delete($id)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'Delete', array($id));
 
         return parent::Delete($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function pesquisaEquipamentos($id = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'pesquisaEquipamentos', array($id));
+
+        return parent::pesquisaEquipamentos($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function listagem()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listagem', array());
+
+        return parent::listagem();
     }
 
 }

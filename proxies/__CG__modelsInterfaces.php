@@ -64,10 +64,10 @@ class Interfaces extends \models\Interfaces implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'models\\Interfaces' . "\0" . 'id', '' . "\0" . 'models\\Interfaces' . "\0" . 'nome', '' . "\0" . 'models\\Interfaces' . "\0" . 'equipamentos', '' . "\0" . 'models\\Interfaces' . "\0" . 'usuarios');
+            return array('__isInitialized__', '' . "\0" . 'models\\Interfaces' . "\0" . 'id', '' . "\0" . 'models\\Interfaces' . "\0" . 'nome', '' . "\0" . 'models\\Interfaces' . "\0" . 'descricao', '' . "\0" . 'models\\Interfaces' . "\0" . 'equipamentos', '' . "\0" . 'models\\Interfaces' . "\0" . 'patchpanel', '' . "\0" . 'models\\Interfaces' . "\0" . 'usuarios');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'models\\Interfaces' . "\0" . 'id', '' . "\0" . 'models\\Interfaces' . "\0" . 'nome', '' . "\0" . 'models\\Interfaces' . "\0" . 'equipamentos', '' . "\0" . 'models\\Interfaces' . "\0" . 'usuarios');
+        return array('__isInitialized__', '' . "\0" . 'models\\Interfaces' . "\0" . 'id', '' . "\0" . 'models\\Interfaces' . "\0" . 'nome', '' . "\0" . 'models\\Interfaces' . "\0" . 'descricao', '' . "\0" . 'models\\Interfaces' . "\0" . 'equipamentos', '' . "\0" . 'models\\Interfaces' . "\0" . 'patchpanel', '' . "\0" . 'models\\Interfaces' . "\0" . 'usuarios');
     }
 
     /**
@@ -213,6 +213,28 @@ class Interfaces extends \models\Interfaces implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function getDescricao()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescricao', array());
+
+        return parent::getDescricao();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDescricao($descricao)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescricao', array($descricao));
+
+        return parent::setDescricao($descricao);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getEquipamentos()
     {
 
@@ -268,12 +290,34 @@ class Interfaces extends \models\Interfaces implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function Insert($objecto)
+    public function getPatchpanel()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Insert', array($objecto));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPatchpanel', array());
 
-        return parent::Insert($objecto);
+        return parent::getPatchpanel();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPatchpanel(\models\Patchpanel $patchpanel)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPatchpanel', array($patchpanel));
+
+        return parent::setPatchpanel($patchpanel);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function Insert($objecto, $eq = false, $path = false)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Insert', array($objecto, $eq, $path));
+
+        return parent::Insert($objecto, $eq, $path);
     }
 
     /**
@@ -301,6 +345,28 @@ class Interfaces extends \models\Interfaces implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function VerificarInterface($nome, $equip)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'VerificarInterface', array($nome, $equip));
+
+        return parent::VerificarInterface($nome, $equip);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function VerificarInterfacepatch($nome, $patch)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'VerificarInterfacepatch', array($nome, $patch));
+
+        return parent::VerificarInterfacepatch($nome, $patch);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function Update($dados)
     {
 
@@ -318,6 +384,39 @@ class Interfaces extends \models\Interfaces implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'Delete', array($id));
 
         return parent::Delete($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function listagem()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'listagem', array());
+
+        return parent::listagem();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function pesquisaInterface($id = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'pesquisaInterface', array($id));
+
+        return parent::pesquisaInterface($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function pesquisaInterfacePatch($id = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'pesquisaInterfacePatch', array($id));
+
+        return parent::pesquisaInterfacePatch($id);
     }
 
 }

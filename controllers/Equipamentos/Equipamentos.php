@@ -19,9 +19,11 @@ use application\Session;
 class Equipamentos extends Controller {
 
     private $equipamento;
+    private $propriedade;
 
     public function __construct() {
         $this->equipamento = $this->LoadModelo('Equipamentos');
+        $this->propriedade = $this->LoadModelo('Propriedade');
         parent::__construct();
     }
 
@@ -39,8 +41,6 @@ class Equipamentos extends Controller {
         }
 
 
-
-
         $paginador = new \vendor\paginador\Paginador();
 
         $this->view->titulo = "EQUIPAMENTOS";
@@ -51,10 +51,10 @@ class Equipamentos extends Controller {
         if ($this->getInt('enviar') == 1) {
             $this->view->dados = $_POST;
 
-            print_r($_POST['contacts']); 
-          
-            exit;
-            
+//            print_r($_POST['contacts']); 
+//          
+//            exit;
+
             if (!$this->getSqlverifica('nome')) {
                 // $this->view->erro = "Porfavor Introduza o primeiro nome do cliente ";
                 //$this->view->renderizar("novo");
@@ -71,19 +71,11 @@ class Equipamentos extends Controller {
                 exit;
             }
 
-            if (!$this->getSqlverifica('modelo')) {
+
+            if (!$this->getSqlverifica('tipo')) {
                 // $this->view->erro = "Porfavor Introduza o primeiro nome do cliente ";
                 //$this->view->renderizar("novo");
-                $ret = Array("nome" => Session::get('nome'), "mensagem" => "Porfavor Introduza  um modelo");
-                echo json_encode($ret);
-                exit;
-            }
-
-
-            if (!$this->getInt('tipo')) {
-                // $this->view->erro = "Porfavor Introduza o primeiro nome do cliente ";
-                //$this->view->renderizar("novo");
-                $ret = Array("nome" => Session::get('nome'), "mensagem" => "Porfavor introduza um tipo. exemplo: 24 portas");
+                $ret = Array("nome" => Session::get('nome'), "mensagem" => "Porfavor introduza um tipo. exemplo: switch");
                 echo json_encode($ret);
                 exit;
             }
@@ -96,21 +88,37 @@ class Equipamentos extends Controller {
                 exit;
             }
 
+
+            if (isset($_POST['produtos'])){
+                foreach ($_POST['produtos'] as $p):
+                    $m = $p[1];
+                    $m1 = $p[2];
+                    $m2 = $p['3'];
+                endforeach;
+                
+            }
+
+
             $this->equipamento->setNome($this->getSqlverifica('nome'));
             $this->equipamento->setDescricao($this->getSqlverifica('descricao'));
-            $this->equipamento->setModelo($this->getSqlverifica('modelo'));
-            $this->equipamento->setTipo($this->getInt('tipo'));
+            $this->equipamento->setTipo($this->getSqlverifica('tipo'));
 
 
 
-            if (!$this->equipamento->Insert($this->equipamento, $this->getInt('rack'))) {
-                //$this->view->erro = "erro ao criar alarme";
-                //$this->view->renderizar("novo");
+            if (!$t=$this->equipamento->Insert($this->equipamento, $this->getInt('rack'))) {
                 $ret = Array("nome" => Session::get('nome'), "mensagem" => "Erro ao guardar dados");
                 echo json_encode($ret);
             } else {
                 $this->view->dados = FALSE;
-                //$this->view->mensagem = "A sua conta foi criada com Sucesso";
+
+                $this->propriedade->setChave('teste');
+                $this->propriedade->setChave('teste1');
+                $this->propriedade->setChave('teste2');
+                $this->propriedade->setValor($m);
+                $this->propriedade->setValor($m1);
+                 $this->propriedade->setValor($m2);
+                
+                $this->propriedade->Insert($this->propriedade,$t);
                 $ret = Array("nome" => Session::get('nome'), "mensagem" => "Dados guardados com sucesso");
                 echo json_encode($ret);
                 exit;
@@ -212,6 +220,5 @@ class Equipamentos extends Controller {
         header('Content-Type: application/json', true);
         echo json_encode($t);
     }
-
 
 }

@@ -11,7 +11,7 @@
             <div class="block-content collapse in">
                 <div class="span12">
                     <!-- BEGIN FORM-->
-                    <form action="<?php print URL; ?>/equipamentos" id="equipament" class="form-horizontal" method="POST">
+                    <form action="<?php print URL; ?>/equipamentos" id="equipamentos" class="form-horizontal" method="POST">
                         <fieldset>
 
                             <div class="control-group">
@@ -38,34 +38,27 @@
 
                             <!------------------------>
 
-
+                            <div class="controls">
                             <div class=" control-group">
                                 <div class="form-group multiple-form-group input-group">
-                                    <div class="input-group-btn input-group-select">
-                                        <li class="dropdown controls">
-
-                                            <button  type="button" role="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                                                <span class="concept">Phone</span> <span class="caret"></span>
-                                            </button>
-
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li class="dropdown">
-                                                <li><a tabindex="-1"  href="#phone">Phone</a></li>
-                                                <li><a tabindex="-1"  href="#fax">Fax</a></li>
-                                                <li><a tabindex="-1"  href="#skype">Skype</a></li>
-                                                <li><a tabindex="-1"  href="#email">E-mail</a></li>
-                                                <li><a tabindex="-1"  href="#www">Web</a></li>
-                                                <input type="hidden" class="input-group-select-val span6 m-wrap" name="contacts['type'][]" value="phone">
-                                            </ul>
-                                        </li>
+                                    <div class="form-group">
+                                        <div class="wrapper">
+                                            <div class="toclone">
+                                                <select name="list">
+                                                    <option>selecione...</option>
+                                                    <option>Modelo</option>
+                                                    <option>Marca</option>
+                                                    <option>Numero de Portas</option>
+                                                    <option></option>
+                                                </select>
+                                                <input  type="text" name="produtos[qtd][1]" class="span4">
+                                                <button type="button" class="add">+</button>
+                                                <button type="button" class="remove">-</button>
+                                            </div>        
+                                        </div>
                                     </div>
-                                    <div class="controls">
-                                        <input type="text" name="contacts['value'][]" class="span6 m-wrap">
-                                    </div>
-                                    <span class="input-group-btn controls" >
-                                        <button type="button" class="btn btn-success btn-add">+</button>
-                                    </span>
                                 </div>
+                            </div>
                             </div>
 
 

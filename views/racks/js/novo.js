@@ -1,15 +1,7 @@
 
 $(document).ready(function() {
     novo();
-
-    $('#tabela').dataTable({
-        "pagingType": "full_numbers",
-    }
-    );
-
-    // notificacao();
-
-
+    tabela();
 });
 
 function novo() {
@@ -31,7 +23,6 @@ function novo() {
 
 }
 
-
 function notificacao(mensagem) {
     $.amaran({
         content: {
@@ -45,6 +36,29 @@ function notificacao(mensagem) {
         cssanimationIn: 'rubberBand',
         cssanimationOut: 'bounceOutUp'
 
+    });
+}
+
+
+function tabela() {
+
+
+    $('#tabela').dataTable({
+        "pagingType": "full_numbers",
+        "sDom": '<"H"Tlfr>t<"F"ip>',
+        "oTableTools": {
+            "sSwfPath": "https://datatables.net/release-datatables/extras/TableTools/media/swf/copy_csv_xls_pdf.swf",
+            "aButtons": ["copy", "csv", "xls", "pdf", "print"]
+        },
+        "bDestroy": true,
+        "aoColumnDefs": [{
+                'bSortable': false,
+                'aTargets': [0, 1]
+            }],
+        "aLengthMenu": [[5, 10, 25, 50, 75, -1], [5, 10, 25, 50, 75, "All"]],
+        "iDisplayLength": 5,
+        "bJQueryUI": true,
+        "oLanguage": {"sLengthMenu": "Mostrar _MENU_ registros por página", "sZeroRecords": "Nenhum registro encontrado", "sInfo": "Mostrando _START_ / _END_ de _TOTAL_ registro(s)", "sInfoEmpty": "Mostrando 0 / 0 de 0 registros", "sInfoFiltered": "(filtrado de _MAX_ registros)", "sSearch": "Pesquisar: ", "oPaginate": {"sFirst": "Início", "sPrevious": "Anterior", "sNext": "Próximo", "sLast": "Último"}}, "aaSorting": [[0, 'desc']], "aoColumnDefs": [{"sType": "num-html", "aTargets": [0]}]
     });
 }
 

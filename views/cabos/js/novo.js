@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
+    tabela();
+    busca();
     patchpanel();
     equipamentos();
     patchpanel1();
     equipamentos1();
     novo();
     pesquisaEquipamentos();
-
-
-
 });
 
 
@@ -177,6 +176,50 @@ function redirecionar(url) {
     setTimeout(function() {
         window.location.href = url;
     }, 2000);
+}
+
+
+function tabela() {
+
+
+    $('#tabela').dataTable({
+        "pagingType": "full_numbers",
+        "sDom": '<"H"Tlfr>t<"F"ip>',
+        "oTableTools": {
+            "sSwfPath": "https://datatables.net/release-datatables/extras/TableTools/media/swf/copy_csv_xls_pdf.swf",
+            "aButtons": ["copy", "csv", "xls", "pdf", "print"]
+        },
+        "bSearchable": false,
+        "bDestroy": true,
+        "aoColumnDefs": [{
+                'bSortable': false,
+                'aTargets': [0, 1]
+            }],
+        "aLengthMenu": [[5, 10, 25, 50, 75, -1], [5, 10, 25, 50, 75, "All"]],
+        "iDisplayLength": 5,
+        "bJQueryUI": true,
+        "oLanguage": {"sLengthMenu": "Mostrar _MENU_ registros por página", "sZeroRecords": "Nenhum registro encontrado", "sInfo": "Mostrando _START_ / _END_ de _TOTAL_ registro(s)", "sInfoEmpty": "Mostrando 0 / 0 de 0 registros", "sInfoFiltered": "(filtrado de _MAX_ registros)", "sSearch": "Pesquisar: ", "oPaginate": {"sFirst": "Início", "sPrevious": "Anterior", "sNext": "Próximo", "sLast": "Último"}}, "aaSorting": [[0, 'desc']], "aoColumnDefs": [{"sType": "num-html", "aTargets": [0]}]
+    });
+}
+
+function busca() {
+    $("#pesquisa").keyup(function() {
+        var index = $(this).parent().index();
+        var nth = "#tabela td:nth-child(" + (index + 0).toString() + ")";
+        var valor = $(this).val().toUpperCase();
+        $("#tabela tbody tr").show();
+        $(nth).each(function() {
+            if ($(this).text().toUpperCase().indexOf(valor) < 0) {
+                $(this).parent().hide();
+            }
+        });
+    });
+
+    $("#pesquisa").blur(function() {
+        $(this).val("");
+    });
+
+
 }
 
 

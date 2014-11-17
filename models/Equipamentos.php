@@ -43,13 +43,7 @@ class Equipamentos {
      */
     private $tipo;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="modelo", type="string", length=45, nullable=true)
-     */
-    private $modelo;
-
+ 
     /**
      * @var \Racks
      *
@@ -86,9 +80,7 @@ class Equipamentos {
         return $this->descricao;
     }
 
-    public function getModelo() {
-        return $this->modelo;
-    }
+   
 
     public function getRacks() {
         return $this->racks;
@@ -102,9 +94,7 @@ class Equipamentos {
         $this->descricao = $descricao;
     }
 
-    public function setModelo($modelo) {
-        $this->modelo = $modelo;
-    }
+  
 
     public function setRacks(Racks $racks) {
         $this->racks = $racks;
@@ -142,7 +132,7 @@ class Equipamentos {
         $objecto->setRacks($rack);
         $em->persist($objecto);
         $em->flush();
-        return True;
+         return $objecto->getId();
     }
 
     function listarEquip($id) {
